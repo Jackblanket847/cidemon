@@ -24,8 +24,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: - ubuntu-latest
-             - self-hosted
+    runs-on: - self-hosted
              - macos
     steps:
       - name: Checkout
@@ -45,8 +44,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: - ubuntu-latest
-             - self-hosted
+    runs-on: - self-hosted
              - macos
     needs: build
     steps:
